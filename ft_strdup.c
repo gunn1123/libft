@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cthamsur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/27 20:39:03 by cthamsur          #+#    #+#             */
-/*   Updated: 2022/03/28 15:34:52 by cthamsur         ###   ########.fr       */
+/*   Created: 2022/03/28 16:04:19 by cthamsur          #+#    #+#             */
+/*   Updated: 2022/03/28 16:10:49 by cthamsur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memset(void *block, int c, size_t size)
+char	*ft_strdup(const char *str)
 {
-	size_t			i;
-	unsigned char	*head;
+	char	*word_dup;
+	char	*cpy;
 
-	i = 0;
-	head = block;
-	while (i < size)
-	{
-		*head++ = (unsigned char) c;
-		i++;
-	}
-	return (block);
+	word_dup = (char *)malloc(ft_strlen(str) + 1);
+	if (word_dup == NULL)
+		return (NULL);
+	cpy = word_dup;
+	while (*str)
+		*word_dup++ = *(char *)str++;
+	*word_dup = '\0';
+	return (cpy);
 }

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cthamsur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/27 20:39:03 by cthamsur          #+#    #+#             */
-/*   Updated: 2022/03/28 15:34:52 by cthamsur         ###   ########.fr       */
+/*   Created: 2022/03/28 15:47:08 by cthamsur          #+#    #+#             */
+/*   Updated: 2022/03/28 15:54:51 by cthamsur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include"libft.h"
-
-void	*ft_memset(void *block, int c, size_t size)
+char	*ft_strchr(const char *str, int ch)
 {
-	size_t			i;
-	unsigned char	*head;
-
-	i = 0;
-	head = block;
-	while (i < size)
+	if ((unsigned char)ch == 0)
+		return ((char *)(str + ft_strlen(str)));
+	while (*str)
 	{
-		*head++ = (unsigned char) c;
-		i++;
+		if (*str == (unsigned char)ch)
+			return ((char *)str);
+		str++;
 	}
-	return (block);
+	return (0);
 }
