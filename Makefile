@@ -1,4 +1,4 @@
-ME = libft.a
+NAME = libft.a
 
 CC = gcc
 
@@ -23,7 +23,7 @@ SRCS =	ft_atoi.c\
 	ft_strdup.c\
 	ft_strncmp.c\
 	ft_strnstr.c\
-       	ft_strrchr.c\
+    ft_strrchr.c\
 	ft_strlen.c\
 	ft_strlcpy.c\
 	ft_strlcat.c\
@@ -31,12 +31,12 @@ SRCS =	ft_atoi.c\
 	ft_split.c\
 	ft_strjoin.c\
 	ft_strtrim.c\
-	ft_itoa.c\
-	ft_strmapi.c\
-	ft_striteri.c\
-	ft_putchar_fd.c\
-	ft_putstr_fd.c\
-	ft_putendl_fd.c\
+	ft_itoa.c			\
+	ft_strmapi.c		\
+	ft_striteri.c		\
+	ft_putchar_fd.c		\
+	ft_putstr_fd.c		\
+	ft_putendl_fd.c		\
 	ft_putnbr_fd.c
 
 OBJS = ${SRCS:.c=.o}
@@ -61,23 +61,19 @@ REMOVE = rm -f
 
 CNorm = Norminette -R CheckForbiddenSourceHeader
 
-$(NAME): ${OBJS}
+all: $(NAME)
 
- ${LIBC} $(NAME) ${OBJS}
+$(NAME): ${OBJS}
+	${LIBC} $(NAME) ${OBJS}
 
 bonus: ${BONUSOBJT}
-
- ${LIBC} $(NAME) ${BONUSOBJT}
-
-all:$(NAME)
-
+	${LIBC} $(NAME) ${BONUSOBJT}
+ 
 clean :
-
- ${REMOVE} ${OBJS} ${BONUSOBJT}
+	${REMOVE} ${OBJS} ${BONUSOBJT}
 
 fclean :clean
-
- ${REMOVE} $(NAME)
+	${REMOVE} $(NAME)
 
 re:fclean all
 
