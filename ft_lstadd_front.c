@@ -6,7 +6,7 @@
 /*   By: cthamsur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 12:10:08 by cthamsur          #+#    #+#             */
-/*   Updated: 2022/04/04 12:53:29 by cthamsur         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:09:41 by cthamsur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!list || !new)
+	if (!lst || !new)
 		return ;
 	new->next = *lst;
 	*lst = new;
