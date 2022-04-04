@@ -53,13 +53,9 @@ BONUS = ft_lstnew.c\
 
 BONUSOBJT = ${BONUS:.c=.o}
 
-LIBR = ranlib
-
-LIBC = ar rc
+LIBC = ar rcs
 
 REMOVE = rm -f
-
-CNorm = Norminette -R CheckForbiddenSourceHeader
 
 all: $(NAME)
 
